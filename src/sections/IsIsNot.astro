@@ -1,0 +1,58 @@
+---
+import Container from "@/components/Container.astro";
+import Card from "@/components/Card.astro";
+import ChecklistItem from "@/components/ChecklistItem.astro";
+---
+
+<Container class="grid max-w-5xl gap-6 md:grid-cols-2">
+  <Card variant="highlight">
+    <h3 class="mb-5 text-accent">
+      What this <span class="italic">is</span>
+    </h3>
+    <ul class="space-y-3">
+      <ChecklistItem kind="yes"
+        >A creative workshop for practicing flirtation through improv games</ChecklistItem
+      >
+      <ChecklistItem kind="yes"
+        >Fun ways to discover your authentic flirting style without consequences</ChecklistItem
+      >
+      <ChecklistItem kind="yes"
+        >A place for supportive mistakes and productive discomfort</ChecklistItem
+      >
+      <ChecklistItem kind="yes"
+        >A safe space to experiment with charm and playful conversation</ChecklistItem
+      >
+      <ChecklistItem kind="yes"
+        >An opportunity to build confidence in social connection</ChecklistItem
+      >
+      <ChecklistItem kind="yes" finale
+        ><span class="font-display text-lg text-accent italic">Hilarious</span
+        ></ChecklistItem
+      >
+    </ul>
+  </Card>
+  <Card variant="muted">
+    <h3 class="mb-5">
+      What this is <span class="italic">not</span>
+    </h3>
+    <ul class="space-y-3">
+      <ChecklistItem kind="no">An improv show or training course</ChecklistItem>
+      <ChecklistItem kind="no"
+        >Pick-up artist tactics or manipulation techniques</ChecklistItem
+      >
+      <ChecklistItem kind="no"
+        >A dating event or place to find romantic connections (though it might
+        happen!)</ChecklistItem
+      >
+      <ChecklistItem kind="no">Relationship coaching</ChecklistItem>
+      <ChecklistItem kind="no"
+        >A sales pitch or upsell event (this is not a business)</ChecklistItem
+      >
+      <ChecklistItem kind="no">A place for intolerance</ChecklistItem>
+      <ChecklistItem kind="no" finale
+        ><span class="font-display text-lg text-dark-muted italic">Boring</span
+        ></ChecklistItem
+      >
+    </ul>
+  </Card>
+</Container>

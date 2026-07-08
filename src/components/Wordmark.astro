@@ -1,0 +1,15 @@
+---
+interface Props {
+  on?: "light" | "dark";
+}
+
+const { on = "light" } = Astro.props;
+
+const flirtClass = on === "light" ? "text-dark" : "text-light";
+const improvClass = on === "light" ? "text-accent" : "text-accent";
+---
+
+<span class="font-display text-2xl">
+  <span class={flirtClass}>Flirt</span>
+  <span class={improvClass}>Improv</span>
+</span>

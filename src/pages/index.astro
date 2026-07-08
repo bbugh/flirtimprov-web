@@ -1,11 +1,81 @@
 ---
-import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+import SiteHeader from "@/sections/SiteHeader.astro";
+import Hero from "@/sections/Hero.astro";
+import WhatIs from "@/sections/WhatIs.astro";
+import WhyFlirtWhyImprov from "@/sections/WhyFlirtWhyImprov.astro";
+import NextEvent from "@/sections/NextEvent.astro";
+import PickupQuote from "@/sections/PickupQuote.astro";
+import Format from "@/sections/Format.astro";
+import TestimonialBand from "@/sections/TestimonialBand.astro";
+import Details from "@/sections/Details.astro";
+import IsIsNot from "@/sections/IsIsNot.astro";
+import NotADatingEvent from "@/sections/NotADatingEvent.astro";
+import Faq from "@/sections/Faq.astro";
+import Testimonials from "@/sections/Testimonials.astro";
+import Organizers from "@/sections/Organizers.astro";
+import JoinCta from "@/sections/JoinCta.astro";
+import SiteFooter from "@/sections/SiteFooter.astro";
+import closingStreet from "@/assets/closing-street.jpg";
+import Multimonials from "@/sections/Multimonials.astro";
 ---
 
 <Layout>
-  <Welcome />
+  <SiteHeader />
+
+  <Section>
+    <Hero />
+    <WhatIs />
+    <WhyFlirtWhyImprov />
+    <NextEvent />
+  </Section>
+
+  <Section variant="dark">
+    <PickupQuote />
+  </Section>
+
+  <Section>
+    <Format />
+  </Section>
+
+  <Section variant="light-recessed">
+    <TestimonialBand />
+  </Section>
+
+  <Section>
+    <Details />
+    <IsIsNot />
+  </Section>
+
+  <Section variant="light-recessed">
+    <NotADatingEvent />
+  </Section>
+
+  <Section>
+    <Faq />
+  </Section>
+
+  <Section variant="light-recessed">
+    <Multimonials />
+  </Section>
+
+  <Section>
+    <Organizers />
+  </Section>
+
+  <Section variant="dark">
+    <JoinCta />
+  </Section>
+
+  <Image
+    src={closingStreet}
+    alt="Two people laughing on a city street"
+    class="h-96 w-full object-cover object-top"
+    widths={[768, 1280, 1920]}
+    sizes="100vw"
+  />
+
+  <SiteFooter />
 </Layout>

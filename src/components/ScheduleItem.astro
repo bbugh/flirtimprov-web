@@ -1,0 +1,19 @@
+---
+interface Props {
+  minutes: string;
+  title: string;
+}
+
+const { minutes, title } = Astro.props;
+---
+
+<li class="flex items-start gap-4 border-b border-divider py-6">
+  <div class="flex w-16 shrink-0 flex-col items-center text-accent">
+    <span class="font-display text-4xl font-medium">{minutes}</span>
+    <span class="text-xs font-semibold tracking-wider uppercase">min</span>
+  </div>
+  <div>
+    <h4 class="mb-1">{title}</h4>
+    <p><slot /></p>
+  </div>
+</li>

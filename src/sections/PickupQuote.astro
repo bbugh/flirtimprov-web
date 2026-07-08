@@ -1,0 +1,125 @@
+---
+import Container from "@/components/Container.astro";
+
+const pickupLines = [
+  `Are you a campfire? Because you're <span class="text-accent">hot</span> and I want s'more.`,
+  `There is something wrong with my phone. It doesn't have your number in it.`,
+  `Hey, do you know what would look great on you? Me.`,
+  `I'm new in town. Could you give me directions to your apartment?`,
+  `Is your name Google? Because you've got everything I'm searching for.`,
+  `Have you been to the doctors lately? Cause I think you're lacking some vitamin me.`,
+  `Kiss me if I'm wrong, but dinosaurs still exist, right?`,
+  `Are you Australian? Because you meet all of my koala-fications.`,
+  `Do you believe in love at first sight or should I walk past again?`,
+  `Hey, my name's Microsoft. Can I crash at your place tonight?`,
+  `Did it hurt when you fell from the vending machine? Cause you look like a snack!`,
+  `You are hotter than the bottom of my laptop.`,
+  `I'm not actually this tall. I'm sitting on my wallet.`,
+  `Are you my phone charger? Because without you, I'd die.`,
+  `Hi, I'm Mr Right, somebody said you were looking for me?`,
+  `Excuse me, do you know how much a polar bear weighs? No? Me neither but it breaks the ice.`,
+  `Do you like raisins? How do you feel about a date?`,
+  `Sorry, but you owe me a drink. Because when I looked at you, I dropped mine.`,
+  `Hey, tie your shoes! I don't want you falling for anyone else.`,
+  `Wouldn't we look cute on a wedding cake together?`,
+  `There's only one thing I want to change about you, and that's your last name.`,
+  `Hey, you're pretty and I'm cute. Together we'd be Pretty Cute.`,
+  `My buddies bet me that I wouldn't be able to start a conversation with the hottest person in the bar.`,
+  `(hold out hand) Would you hold this for me while I go for a walk?`,
+  `Remember me? Oh, that's right, I've met you only in my dreams.`,
+  `If I told you that you had a great body, would you hold it against me?`,
+  `I'm going to have to ask you to leave. You're making the other girls look bad.`,
+  `Is there an airport nearby or is it my heart taking off?`,
+  `Are you sure you're not tired? You've been running through my mind all day.`,
+  `Would you grab my arm, so I can tell my friends I've been touched by an angel?`,
+  `Hello. Cupid called. He wants to tell you that he needs my heart back.`,
+  `I'm not a photographer, but I can picture me and you together.`,
+  `If you were a fruit you'd be a fineapple.`,
+  `I'd say God Bless you, but it looks like he already did.`,
+  `(steps on some ice) Now that the ice is broken, what's your name?`,
+  `Well, here I am. What are your other two wishes?`,
+  `Hi, I'm writing a phone book, can I have your number?`,
+  `If you were a vegetable you'd be a cutecumber`,
+  `Do I know you? Because you look a lot like my next boyfriend.`,
+  `Hey. So when our friends ask us how we met, what are we going to tell them?`,
+  `This is so us. Me doing all the talking. You sitting there looking all cute.`,
+  `Hawaiian or pepperoni?`,
+  `I don't know who'd be more excited about us going on a date, me or my mom.`,
+  `Sunday priorities: exercise, sleep, or aggressive mimosas?`,
+  `If it was your last day on earth, what would you eat for breakfast, lunch, and dinner?`,
+  `I seem to have lost my number, can I have yours?`,
+  `Are you going to kiss me or do I have to lie to my diary?`,
+  `Feel my t-shirt, it's made of boyfriend material.`,
+  `If Internet Explorer is brave enough to ask you to be your default browser, I'm brave enough to ask you out.`,
+  `See my friend over there? He wants to know if you think I'm cute.`,
+  `I'm sorry, were you talking to me? [No] Well then, please start.`,
+  `I can't find my puppy. Can you help me find him? I think he might be under my bed.`,
+  `You're so beautiful that you made me forget my pick up line.`,
+  `Hi, my name is [your name], but you can call me tonight.`,
+  `Hey, do you have a couple minutes for me to hit on you?`,
+  `If I were to ask you out on a date, would your answer be the same as the answer to this question?`,
+  `I love you like an unspoken metaphor. That's why I had to use a simile.`,
+  `Is it hot in here or is it just you?`,
+  `Did it hurt when you fell out of heaven?`,
+  `Hey, is that guy bothering you? No? Would you mind if I bothered you then?`,
+  `If you were a phaser on “Star Trek”, you'd be set to stun.`,
+  `Is your name Wally? Because someone like you is hard to find.`,
+  `Are you a Wi-Fi hotspot? Because I feel a connection.`,
+  `On a scale from 1 to 10, you're a 9… and I'm the 1 you need.`,
+  `Are you a parking ticket? Because you've got fine written all over you.`,
+  `I used to be able to recite the alphabet until we met—now I can't get past 'u'.`,
+  `Was that an earthquake or did you just rock my world?`,
+  `Are you religious? Because you're the answer to all my prayers.`,
+  `Do you do magic? Because when I look at you, everyone else disappears.`,
+];
+---
+
+<Container class="space-y-8 text-center">
+  <p
+    id="pickup-line"
+    aria-live="polite"
+    class="max-w-5xl font-display text-3xl leading-12 text-light sm:text-4xl"
+    set:html={`“${pickupLines[0]}”`}
+  />
+  <button
+    id="pickup-shuffle"
+    type="button"
+    class="group inline-flex items-center gap-2.5 rounded-full border border-accent px-5 py-2.5 text-sm font-semibold tracking-wider text-accent uppercase transition-colors hover:border-accent hover:bg-accent hover:text-light"
+  >
+    <svg
+      aria-hidden="true"
+      class="h-4 w-4 transition-transform group-hover:rotate-180"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M16 3h5v5"></path>
+      <path d="M4 20 21 3"></path>
+      <path d="M21 16v5h-5"></path>
+      <path d="m15 15 6 6"></path>
+      <path d="M4 4l5 5"></path>
+    </svg>
+    Try another pickup line
+  </button>
+</Container>
+<script is:inline define:vars={{ pickupLines }}>
+  function* cycle(items) {
+    const shuffled = [...items].sort(() => Math.random() - 0.5);
+    while (true) {
+      for (const item of shuffled) yield item;
+    }
+  }
+
+  const lines = cycle(pickupLines);
+  const pickupLineElement = document.getElementById("pickup-line");
+
+  function shuffle() {
+    pickupLineElement.innerHTML = "\u201c" + lines.next().value + "\u201d";
+  }
+
+  shuffle();
+  document.getElementById("pickup-shuffle").addEventListener("click", shuffle);
+</script>

@@ -1,0 +1,12 @@
+---
+interface Props {
+  question: string;
+}
+
+const { question } = Astro.props;
+---
+
+<div class="border-b border-divider py-6">
+  <h3 class="mb-2">{question}</h3>
+  <p><slot /></p>
+</div>

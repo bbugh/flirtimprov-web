@@ -1,0 +1,30 @@
+---
+import Wordmark from "@/components/Wordmark.astro";
+import Button from "@/components/Button.astro";
+
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#format", label: "Format" },
+  { href: "#details", label: "Details" },
+  { href: "#faq", label: "FAQ" },
+];
+---
+
+<header class="sticky top-0 z-30 border-b border-divider bg-light">
+  <div class="mx-auto flex h-nav max-w-6xl items-center justify-between px-6">
+    <a href="#top"><Wordmark /></a>
+    <nav class="flex items-center gap-6 sm:gap-8">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="hidden text-sm font-semibold text-dark transition-colors hover:text-accent sm:inline"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <Button href="#join" size="sm">Interest form</Button>
+    </nav>
+  </div>
+</header>

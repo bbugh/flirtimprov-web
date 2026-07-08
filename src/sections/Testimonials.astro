@@ -1,0 +1,24 @@
+---
+import Container from "@/components/Container.astro";
+import TestimonialCard from "@/components/TestimonialCard.astro";
+---
+
+<Container class="max-w-5xl">
+  <h2 class="mb-3 text-center">What people say after</h2>
+  <p class="mb-12 text-center text-dark-muted">
+    A few words from folks who came in nervous and left grinning.
+  </p>
+  <div class="grid gap-6 md:grid-cols-3">
+    <TestimonialCard name="Marcus T." role="Regular" initial="M">
+      No pressure, no cringe, just a room full of people rooting for each other.
+    </TestimonialCard>
+    <TestimonialCard name="Dani L." role="Past attendee" initial="D">
+      I signed up to leave my comfort zone and accidentally made four new
+      friends.
+    </TestimonialCard>
+    <TestimonialCard name="Sam K." role="Past attendee" initial="S">
+      I finally stopped overthinking and just played. Flirting is fun when
+      nobody's keeping score.
+    </TestimonialCard>
+  </div>
+</Container>

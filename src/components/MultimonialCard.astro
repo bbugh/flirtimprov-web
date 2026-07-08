@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  avatar: ImageMetadata;
+}
+
+const { name, avatar } = Astro.props;
+---
+
+<figure
+  class="relative w-full break-inside-avoid rounded-lg border border-divider bg-light p-4 sm:p-6"
+>
+  <blockquote class="mb-3">
+    <p class="leading-relaxed text-slate-600">
+      &ldquo;<slot />&rdquo;
+    </p>
+  </blockquote>
+
+  <figcaption class="flex flex-wrap items-center gap-2">
+    <Image
+      src={avatar}
+      alt={name}
+      width={48}
+      height={48}
+      class="h-8 w-8 rounded-full border border-accent object-cover"
+    />
+    <p class="text-sm font-semibold text-slate-900">{name}</p>
+  </figcaption>
+</figure>

@@ -1,0 +1,93 @@
+---
+import Container from "@/components/Container.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import FramedImage from "@/components/FramedImage.astro";
+import ScheduleItem from "@/components/ScheduleItem.astro";
+import whoConversation from "@/assets/who-conversation.jpg";
+---
+
+<div id="format">
+  <Container class="max-w-4xl">
+    <SectionTitle>Format</SectionTitle>
+  </Container>
+
+  <Container class="max-w-4xl pt-14">
+    <h3 class="mb-4">What to expect</h3>
+    <div class="max-w-2xl">
+      <p class="mb-4">
+        This is a <span class="font-semibold">
+          no-audience, full participation event</span
+        >, so come ready to engage and have fun. No prior improv experience is
+        necessary, just a willingness to play and laugh.
+      </p>
+      <p>
+        Expect lots of laughter, eye rolls, and groans, and maybe even a blush
+        or ten. Bring your best (or worst) cheesy pick-up lines, an open mind,
+        and a sense of humor. By the end, you'll feel more confident letting
+        your genuine flirty self shine through everywhere you go.
+      </p>
+    </div>
+  </Container>
+
+  <Container
+    class="grid max-w-4xl items-center gap-10 pt-16 md:grid-cols-2 md:gap-14"
+  >
+    <FramedImage
+      src={whoConversation}
+      alt="Two people flirting in conversation"
+      imgClass="h-80"
+      class="order-last md:order-first"
+    />
+    <div>
+      <h3 class="mb-4">Who should come?</h3>
+      <p class="mb-4">
+        This event is for adults of all flirting experience levels, relationship
+        types, preferences, and curiosities. Statistically the host and most
+        attendees tend to be straight women and men, and we aim for male/female
+        gender balance to create natural flirting dynamics, but everyone is
+        genuinely welcome.
+      </p>
+      <p class="font-display text-xl text-accent italic">
+        No previous improv (or flirting) experience is required.
+      </p>
+    </div>
+  </Container>
+
+  <Container class="max-w-3xl pt-16">
+    <div class="mb-3 flex flex-wrap items-end justify-between gap-2">
+      <h3>Fun &amp; Games</h3>
+      <span class="font-display text-lg text-accent italic"
+        >about 2 hours together</span
+      >
+    </div>
+    <p class="mb-8">
+      Every Flirt Improv event has different themes and games, but there's a
+      common structure:
+    </p>
+
+    <ol>
+      <ScheduleItem minutes="20" title="Warm-up Games">
+        Light-hearted connection games to get everyone comfortable and in the
+        mood for fun.
+      </ScheduleItem>
+      <ScheduleItem minutes="40" title="Flirting Scenarios">
+        In groups or pairs, we act out different flirting scenarios, from
+        everyday situations to real stories from our lives. Expect to play
+        characters and get creative with your approach.
+      </ScheduleItem>
+      <ScheduleItem minutes="20" title="Pick-Up Lines">
+        Share and rate cheesy pick-up lines, learning to appreciate the humor
+        while practicing our delivery.
+      </ScheduleItem>
+      <ScheduleItem minutes="25" title="Storytelling">
+        Participants share personal anecdotes related to flirting: successes,
+        failures, or just plain funny. A great way to connect, learn from each
+        other, and maybe have a corrective emotional experience.
+      </ScheduleItem>
+      <ScheduleItem minutes="15" title="Reflection">
+        We wrap up with a group discussion about what we learned, how we felt,
+        and how to apply these skills in real life.
+      </ScheduleItem>
+    </ol>
+  </Container>
+</div>

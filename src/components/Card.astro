@@ -1,0 +1,22 @@
+---
+interface Props {
+  variant: "event" | "highlight" | "muted" | "quote";
+  as?: "div" | "figure";
+  class?: string;
+}
+
+const { variant, as = "div", class: className } = Astro.props;
+
+const Tag = as;
+
+const variantClass = {
+  event: "border-dark-recessed bg-light-recessed",
+  highlight: "border-accent bg-light-elevated",
+  muted: "border-divider bg-light-recessed",
+  quote: "border-divider bg-light-elevated",
+}[variant];
+---
+
+<Tag class:list={["rounded-xs border p-8", variantClass, className]}>
+  <slot />
+</Tag>

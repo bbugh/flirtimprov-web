@@ -1,0 +1,18 @@
+---
+interface Props {
+  variant?: "light" | "light-recessed" | "dark";
+  class?: string;
+}
+
+const { variant = "light", class: className } = Astro.props;
+
+const variantClass = {
+  light: "bg-light",
+  "light-recessed": "bg-light-recessed",
+  dark: "bg-dark-recessed",
+}[variant];
+---
+
+<section class:list={["flex flex-col gap-16 py-24", variantClass, className]}>
+  <slot />
+</section>

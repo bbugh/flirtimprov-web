@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  imgClass?: string;
+  class?: string;
+  loading?: "eager" | "lazy";
+  fetchpriority?: "high" | "low" | "auto";
+}
+
+const {
+  src,
+  alt,
+  imgClass,
+  class: className,
+  loading = "lazy",
+  fetchpriority = "auto",
+} = Astro.props;
+---
+
+<div class:list={["border border-accent p-2", className]}>
+  <Image
+    src={src}
+    alt={alt}
+    class:list={["w-full object-cover", imgClass]}
+    widths={[480, 768, 1024]}
+    sizes="(min-width: 768px) 50vw, 100vw"
+    loading={loading}
+    fetchpriority={fetchpriority}
+  />
+</div>

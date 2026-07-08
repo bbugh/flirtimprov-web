@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import Container from "@/components/Container.astro";
+import hostBrian from "@/assets/host-brian.jpg";
+---
+
+<Container class="max-w-4xl">
+  <h2 class="mb-10">About the organizers</h2>
+  <div class="grid gap-10 md:grid-cols-2">
+    <div class="flex gap-5">
+      <Image
+        src={hostBrian}
+        alt="Brian, host"
+        width={128}
+        class="h-16 w-16 shrink-0 rounded-full border border-accent object-cover"
+      />
+      <div>
+        <h3 class="mb-2">
+          Brian <span class="text-lg text-accent">/ Host</span>
+        </h3>
+        <p class="italic">
+          I created Flirt Improv because the world could use more love, joy, and
+          the fun kind of sparks. Improv taught me that people light up when
+          they feel safe to experiment and be unexpected, and flirting is just
+          spicy play for grown-ups. Let's create a space for authenticity and
+          sizzle.
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-5">
+      <div
+        class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-dashed border-accent font-display text-2xl text-accent"
+      >
+        ?
+      </div>
+      <div>
+        <h3 class="mb-2">
+          Co-host <span class="text-lg">/ coming soon</span>
+        </h3>
+        <p>
+          A second organizer is joining the fun. Their introduction will land
+          here soon.
+        </p>
+      </div>
+    </div>
+  </div>
+</Container>

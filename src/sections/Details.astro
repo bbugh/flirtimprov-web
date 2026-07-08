@@ -1,0 +1,44 @@
+---
+import Container from "@/components/Container.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import StatItem from "@/components/StatItem.astro";
+import DetailNote from "@/components/DetailNote.astro";
+---
+
+<div id="details">
+  <Container class="max-w-4xl">
+    <SectionTitle>Details</SectionTitle>
+    <p class="mt-6 text-lg">
+      Sound fun? Here's what you need to know about attending.
+    </p>
+  </Container>
+
+  <Container class="mt-12 max-w-4xl">
+    <div class="grid grid-cols-2 gap-y-8 sm:grid-cols-4">
+      <StatItem label="Adults only" divider>18+</StatItem>
+      <StatItem label="Time together" divider
+        >&asymp;2<span class="text-2xl"> hrs</span></StatItem
+      >
+      <StatItem label="Group size" divider>&lt;20</StatItem>
+      <StatItem label="Experience needed">0</StatItem>
+    </div>
+  </Container>
+
+  <Container class="mt-16 grid max-w-4xl gap-x-14 gap-y-9 sm:grid-cols-2">
+    <DetailNote title="Cost">
+      Usually a small fee to cover the space and materials. Exact pricing goes
+      out with each event announcement.
+    </DetailNote>
+    <DetailNote title="Location">
+      A cozy, relaxed space that encourages interaction: a community center,
+      caf&eacute;, or private home.
+    </DetailNote>
+    <DetailNote title="Dress code">
+      Casual and comfortable, like a fun night out with friends.
+    </DetailNote>
+    <DetailNote title="Food & drink">
+      Light snacks and drinks may be provided. Feel free to bring your own
+      favorites to share.
+    </DetailNote>
+  </Container>
+</div>

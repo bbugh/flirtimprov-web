@@ -1,0 +1,66 @@
+---
+import Container from "@/components/Container.astro";
+import MultimonialCard from "@/components/MultimonialCard.astro";
+import sarahJohnson from "@/assets/testimonials/sarah-johnson.jpeg";
+import michaelChen from "@/assets/testimonials/michael-chen.jpeg";
+import emilyRodriguez from "@/assets/testimonials/emily-rodriguez.jpeg";
+import davidThompson from "@/assets/testimonials/david-thompson.jpeg";
+import lisaParker from "@/assets/testimonials/lisa-parker.jpeg";
+import jamesWilson from "@/assets/testimonials/james-wilson.jpeg";
+import danielReyes from "@/assets/testimonials/daniel-reyes.jpeg";
+import rachelKim from "@/assets/testimonials/rachel-kim.jpeg";
+import karenFoster from "@/assets/testimonials/karen-foster.jpeg";
+---
+
+<Container id="testimonials" class="max-w-4xl">
+  <div class="mx-auto max-w-3xl lg:max-w-6xl">
+    <div class="mb-6 max-w-prose">
+      <p class="text-lg">
+        Don't just take our word for it! See what real people like you have to
+        say after their experience with Flirt Improv.
+      </p>
+    </div>
+
+    <div class="columns-1 space-y-4 sm:columns-2 lg:columns-3">
+      <MultimonialCard name="Emily Rodriguez" avatar={emilyRodriguez}>
+        I’m excited! I want to try more improv, and I learned a lot about
+        myself.
+      </MultimonialCard>
+
+      <MultimonialCard name="Sarah Johnson" avatar={sarahJohnson}>
+        Brian, you brought it! I felt your passion for this work.
+      </MultimonialCard>
+
+      <MultimonialCard name="Michael Chen" avatar={michaelChen}>
+        It was awesome. Well paced, and it made awkwardness comfortable, if
+        that’s even possible.
+      </MultimonialCard>
+
+      <MultimonialCard name="David Thompson" avatar={davidThompson}>
+        I loved everyone, and would honestly be open to staying in touch with
+        everyone.
+      </MultimonialCard>
+
+      <MultimonialCard name="Lisa Parker" avatar={lisaParker}>
+        The group of people you had made the whole experience easy.
+      </MultimonialCard>
+
+      <MultimonialCard name="James Wilson" avatar={jamesWilson}>
+        I loved the directional signs that led people in. Fun and helpful!
+      </MultimonialCard>
+
+      <MultimonialCard name="Daniel Reyes" avatar={danielReyes}>
+        I really enjoyed my partner’s energy, and we talked about events we’d
+        like to share with each other.
+      </MultimonialCard>
+
+      <MultimonialCard name="Rachel Kim" avatar={rachelKim}>
+        I enjoyed the demonstrations that showed examples for each activity.
+      </MultimonialCard>
+
+      <MultimonialCard name="Karen Foster" avatar={karenFoster}>
+        The pickup lines were great.
+      </MultimonialCard>
+    </div>
+  </div>
+</Container>

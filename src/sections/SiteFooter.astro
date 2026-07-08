@@ -1,0 +1,37 @@
+---
+import Container from "@/components/Container.astro";
+import Wordmark from "@/components/Wordmark.astro";
+import Button from "@/components/Button.astro";
+---
+
+<footer class="border-t border-light-muted bg-dark-recessed">
+  <Container class="max-w-5xl py-14">
+    <div class="grid items-start gap-8 md:grid-cols-2">
+      <div>
+        <p class="mb-1"><Wordmark on="dark" /></p>
+        <p class="mb-3 font-display text-light-muted italic">
+          Spicy play for grown-ups.
+        </p>
+        <p class="max-w-xs text-sm text-light-muted">
+          A pressure-free space to practice charm, get a little awkward, and
+          laugh a lot.
+        </p>
+      </div>
+      <div class="flex flex-col gap-4 md:items-end">
+        <Button href="#join" on="dark" class="w-max">Get event updates</Button>
+        <p class="text-sm text-light-muted">
+          18+ &middot; <a
+            href="mailto:hey@flirtimprov.com"
+            class="transition-colors hover:text-light-muted"
+            >hey@flirtimprov.com</a
+          >
+        </p>
+      </div>
+    </div>
+    <div
+      class="mt-10 border-t border-light-muted pt-6 text-sm text-light-muted"
+    >
+      &copy; Flirt Improv. All in good fun.
+    </div>
+  </Container>
+</footer>

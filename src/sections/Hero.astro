@@ -1,0 +1,37 @@
+---
+import Container from "@/components/Container.astro";
+import FramedImage from "@/components/FramedImage.astro";
+import heroLaughing from "@/assets/hero-laughing.jpg";
+---
+
+<Container id="top" class="grid max-w-6xl items-center gap-8 md:grid-cols-2">
+  <div>
+    <h1>
+      Flirt&#32;
+      <span class="text-accent">Improv</span>
+    </h1>
+    <p class="mt-6 font-display text-2xl italic sm:text-3xl">
+      Spicy play for grown-ups.
+    </p>
+    <p class="mt-5 max-w-md text-lg">
+      A fun, playful space where charm is celebrated, mistakes are forgiven, and
+      cheesy lines are applauded.
+    </p>
+    <div
+      class="mt-8 flex items-center gap-5 text-sm font-semibold tracking-widest text-accent uppercase"
+    >
+      <span>Adults 18+</span>
+      <span class="h-4 w-px bg-divider"></span>
+      <span>&asymp; 2 hours</span>
+      <span class="h-4 w-px bg-divider"></span>
+      <span>No experience needed</span>
+    </div>
+  </div>
+  <FramedImage
+    src={heroLaughing}
+    alt="Two people laughing together"
+    imgClass="h-96 object-top"
+    loading="eager"
+    fetchpriority="high"
+  />
+</Container>

@@ -1,0 +1,39 @@
+---
+interface Props {
+  href?: string;
+  on?: "light" | "dark";
+  size?: "sm" | "md" | "lg";
+  type?: "submit";
+  class?: string;
+}
+
+const { href, on = "light", size = "md", type, class: className } = Astro.props;
+
+const base =
+  "inline-block font-semibold text-light bg-accent transition-colors rounded-xs";
+
+const onClass = {
+  light: "hover:bg-dark-recessed",
+  dark: "hover:bg-accent hover:text-dark",
+}[on];
+
+const sizeClass = {
+  sm: "text-sm px-4 py-2",
+  md: "px-6 py-3.5",
+  lg: "px-8 py-3.5",
+}[size];
+
+const classes = [base, onClass, sizeClass, className];
+---
+
+{
+  href ? (
+    <a href={href} class:list={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type ?? "button"} class:list={classes}>
+      <slot />
+    </button>
+  )
+}
