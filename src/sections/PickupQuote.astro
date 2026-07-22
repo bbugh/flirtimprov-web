@@ -66,7 +66,7 @@ const pickupLines = [
   `Is your name Wally? Because someone like you is hard to find.`,
   `Are you a Wi-Fi hotspot? Because I feel a connection.`,
   `On a scale from 1 to 10, you're a 9… and I'm the 1 you need.`,
-  `Are you a parking ticket? Because you've got fine written all over you.`,
+  `Are you a parking ticket? Because you've got <span class="text-accent">fine</span> written all over you.`,
   `I used to be able to recite the alphabet until we met—now I can't get past 'u'.`,
   `Was that an earthquake or did you just rock my world?`,
   `Are you religious? Because you're the answer to all my prayers.`,
@@ -75,12 +75,14 @@ const pickupLines = [
 ---
 
 <Container class="space-y-8 text-center">
-  <p
-    id="pickup-line"
-    aria-live="polite"
-    class="max-w-5xl font-display text-3xl leading-12 text-light sm:text-4xl"
-    set:html={`“${pickupLines[0]}”`}
-  />
+  <div class="flex h-32 items-center justify-center">
+    <p
+      id="pickup-line"
+      aria-live="polite"
+      class="max-w-5xl font-display text-3xl leading-12 text-light sm:text-4xl"
+      set:html={`“${pickupLines[0]}”`}
+    />
+  </div>
   <button
     id="pickup-shuffle"
     type="button"
